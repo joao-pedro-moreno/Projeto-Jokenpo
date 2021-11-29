@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Jokenpo 3.0</title>
+</head>
+<body>
+    <h1 id="game-title">Jokenpo</h1>
+    <main>
+        <div id="out-game">
+            <div id="game-buttons">
+                <input type="button" value="JOGAR" id="button-start" class="buttons" onclick="start()"><br>
+                <input type="button" value="COMO JOGAR" id="button-future" class="buttons" onclick="comoJogar()">
+            </div>
+        </div>
+
+        <div id="in-game">
+            <div id="game-options">
+                <button onclick="pedra()" id="pedra" class="game-options"><img src="img/pedra.png" alt="Pedra"></button>
+                <button onclick="papel()" id="papel" class="game-options"><img src="img/papel.png" alt="Papel"></button>
+                <button onclick="tesoura()" id="tesoura" class="game-options"><img src="img/tesoura.png" alt="Tesoura"></button>
+            </div>
+
+            <div id="game-choices">
+                <div id="player-choice" class="game-choices">
+                    <p id="player">Você jogou:</p>
+                    <p id="player-choice-game"></p>
+                </div>
+                <div id="computer-choice" class="game-choices">
+                    <p id="computer">O computador jogou:</p>
+                    <p id="computer-choice-game"></p>
+                </div>
+            </div>
+
+            <div id="game-result">
+                <p id="match-result"></p>
+            </div>
+
+            <div id="game-points">
+                <div class="counter">
+                    <p id="player-points">0</p>
+                </div>
+                <span id="separator">X</span>
+                <div class="counter">
+                    <p id="computer-points">0</p>
+                </div>
+            </div>
+        
+            <div id="game-winner">
+                <p id="winner"></p>
+            </div>
+        </div>
+
+        <div id="how-to-play">
+            <h2 id="title-how-to-play">Como Jogar</h2>
+            <p id="how-to-play-desc">Para jogar, basta escolher uma das três posições de mão possíveis (Pedra, Papel ou Tesoura). E funciona assim: a tesoura corta o papel, mas quebra com a pedra; o papel embrulha a pedra, mas é cortado pela tesoura e a pedra quebra a tesoura e é embrulhada pelo papel. </p>
+            <p id="game-desc">Para vencer o jogo vença 10 rodadas contra o computador.</p>
+        </div>
+    </main>
+
+    <div id="button-back">
+        <button onclick="voltar()" id="back-start">VOLTAR</button>
+    </div>
+
+    <footer>
+        <span id="footer-name">João Pedro Moreno</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+    DESENVOLVIDO POR JOÃO PEDRO MORENO
+    jpmoreno1br@gmail.com
+    Moreno#9435
+-->
