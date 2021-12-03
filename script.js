@@ -17,6 +17,9 @@ const backButton = document.querySelector('#button-back')
 const totalPlayerPoints = document.querySelector('#player-points')
 const totalComputerPoints = document.querySelector('#computer-points')
 
+const gameStopwatch = document.querySelector('#game-stopwatch')
+const stopwatch = document.querySelector('#stopwatch')
+
 const gameWinner = document.querySelector('#winner')
 
 let playerPoints = 0
@@ -134,12 +137,15 @@ function verifyWinner() {
         playerPoints = 0
         totalComputerPoints.innerHTML = computerPoints
         totalPlayerPoints.innerHTML = playerPoints
+        gameStopwatch.style.display = 'block'
+        contador(10, stopwatch)
         setTimeout(() => {
             gameWinner.innerHTML = ''
             playerChoice.innerHTML = ''
             computerChoice.innerHTML = ''
             matchResult.innerHTML = ''
-        }, 10000)
+            gameStopwatch.style.display = 'none'
+        }, 11000)
     }
 }
 
@@ -169,4 +175,28 @@ function comoJogar() {
     howToPlay.style.display = 'block'
     outGame.style.display = 'none'
     backButton.style.display = 'block'
+}
+
+// ============================================================
+// Contador
+// ============================================================
+
+function contador(duration, display) {
+    gameStopwatch.style.display = 'block'
+
+    var timer = duration, minutes, seconds
+
+    setInterval(function() {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10)
+
+        minutes = minutes < 10 ? '0' + minutes : minutes
+        seconds = seconds < 10 ? '0' + seconds : seconds
+
+        display.textContent = minutes + ':' + seconds
+
+        if (--timer < 0) {
+            timer = duration
+        }
+    }, 1000)
 }

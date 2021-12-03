@@ -239,6 +239,15 @@ footer {
     font-size: 20px;
 }
 
+#game-stopwatch {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 20px;
+    opacity: 0.5;
+    display: none;
+}
+
 @media (max-width: 650px) {
     main {
         width: 400px;
